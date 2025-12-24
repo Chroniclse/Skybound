@@ -12,6 +12,7 @@ const  DIR_4 = [Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP]
 signal DirectionChanged (new_direction : Vector2)
 
 func _ready() -> void:
+	PlayerManager.player = self
 	state_machine.Initialize(self)
 
 
@@ -56,9 +57,8 @@ func updateAnimation(state : String) -> void:
 	
 # --- Game Loop Functions ---
 
+@warning_ignore("unused_parameter")
 func _process(delta):
-	
-	
 	direction.x = Input.get_action_strength("Right") - Input.get_action_strength("Left")
 	direction.y = Input.get_action_strength("Down") - Input.get_action_strength("Up")
 	direction = Vector2(
@@ -70,5 +70,6 @@ func _process(delta):
 	
 	
 	
+@warning_ignore("unused_parameter")
 func _physics_process( delta ) :
 	move_and_slide()
