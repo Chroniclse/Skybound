@@ -1,9 +1,9 @@
-class_name hitbox extends Area2D
+class_name HitBox extends Area2D
 
 signal Damaged(damage: int)
 
 func TakeDamage(damage : int) -> void:
-	print("The player took " , damage, " damage")
+	print(damage, " damage taken")
 	Damaged.emit(damage)
 
 

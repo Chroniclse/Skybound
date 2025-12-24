@@ -6,7 +6,7 @@ func _ready() -> void:
 	area_entered.connect(AreaEntered)
 
 func AreaEntered(a : Area2D)-> void:
-	if a is hitbox:
+	if a is HitBox:
 		a.TakeDamage(damage)
 	pass
 
