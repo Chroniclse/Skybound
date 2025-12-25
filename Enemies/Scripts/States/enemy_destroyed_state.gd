@@ -8,13 +8,14 @@ class_name EnemyStateDestroyed extends EnemyState
 
 
 var _direction : Vector2
+var _damage_position : Vector2
 
 func init() -> void:
 	enemy.enemy_destroyed.connect(on_enemy_destroyed)
 	pass
 func enter() -> void:
 	enemy.invlunerable = true
-	_direction = enemy.global_position.direction_to(enemy.player.global_position)
+	_direction = enemy.global_position.direction_to(_damage_position)
 	enemy.velocity = _direction*-1*knockback_speed
 	enemy.set_direction(_direction)
 	enemy.update_animation(anim_name)
@@ -26,7 +27,8 @@ func exit() -> void:
 func process(_delta : float) -> EnemyState:
 	enemy.velocity -= enemy.velocity * decelerate_speed * _delta
 	return null
-func on_enemy_destroyed() -> void:
+func on_enemy_destroyed( hurt_box : HurtBox ) -> void:
+	_damage_position = hurt_box.global_position
 	state_machine.change_state(self)
 
 func _on_animation_finished(_a : String) -> void:

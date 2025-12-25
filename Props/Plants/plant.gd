@@ -7,6 +7,6 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func TakeDamage(_damage : int) -> void:
+func TakeDamage(hurt_box : HurtBox) -> void:
 	queue_free()
 	pass

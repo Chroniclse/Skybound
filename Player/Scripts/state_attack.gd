@@ -4,7 +4,8 @@ var attacking : bool = false
 @export var attack_sound : AudioStream
 @export_range (1,20,0.5) var decelerate_speed :float = 5.0
 
-@onready var hurt_box : hurt_box = %AttackHurtBox
+
+@onready var hurt_box : HurtBox = %AttackHurtBox
 @onready var walk : State = $ "../Walk"
 @onready var idle : State = $ "../Idle"
 @onready var animation_player : AnimationPlayer = $"../../AnimationPlayer"
