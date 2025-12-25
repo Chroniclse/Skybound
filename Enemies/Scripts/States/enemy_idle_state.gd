@@ -14,7 +14,7 @@ var _timer : float
 func init() -> void:
 	pass
 func enter() -> void:
-	print("Idle state has been reached")
+
 	enemy.velocity = Vector2.ZERO
 	_timer = randf_range(state_duration_min, state_duration_max)
 	enemy.update_animation(anim_name)
