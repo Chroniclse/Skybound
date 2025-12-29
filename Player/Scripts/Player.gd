@@ -86,13 +86,16 @@ func _take_damage (hurt_box : HurtBox) -> void:
 		return
 	update_hp(-hurt_box.damage)
 	if hp > 0:
+		invulnerable = true
 		player_damaged.emit(hurt_box)
 	else :
 		player_damaged.emit(hurt_box)
 		update_hp(99)
+		print("Player is out of health!")
 	pass
 func update_hp (delta : int) -> void:
-	hp = clampi(delta, 0, max_hp)
+	hp = clampi(hp + delta, 0, max_hp) 
+	PlayerHud.update_hp(hp, max_hp)
 	pass
 
 func make_invulnerable (_duration : float) -> void:
