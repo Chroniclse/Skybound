@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://tv_interaction_001"]
+
+[ext_resource type="Script" path="res://GeneralNodes/TVInteraction/tv_interaction.gd" id="1_tv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tv"]
+radius = 60.0
+
+[node name="TVInteraction" type="Area2D"]
+collision_mask = 1
+script = ExtResource("1_tv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_tv")

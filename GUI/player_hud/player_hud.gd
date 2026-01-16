@@ -32,3 +32,14 @@ func update_max_hp(_max_hp : int) -> void:
 		else:
 			hearts[i].visible = false
 	pass
+
+func show_hint(hint_text: String = "Press X to interact") -> void:
+	var hint_label = $Control/HintLabel
+	if hint_label:
+		hint_label.text = hint_text
+		hint_label.visible = true
+
+func hide_hint() -> void:
+	var hint_label = $Control/HintLabel
+	if hint_label:
+		hint_label.visible = false

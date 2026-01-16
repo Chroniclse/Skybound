@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://pb85nvc2pfs2"]
+
+[ext_resource type="Script" uid="uid://0wgf6ygd0qnm" path="res://GeneralNodes/WinInteraction/win_interaction.gd" id="1_win_interaction"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
+size = Vector2(64, 64)
+
+[node name="WinInteraction" type="Area2D"]
+script = ExtResource("1_win_interaction")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -30.0
+offset_top = -10.0
+offset_right = 30.0
+offset_bottom = 10.0
+text = "WIN"
+horizontal_alignment = 1

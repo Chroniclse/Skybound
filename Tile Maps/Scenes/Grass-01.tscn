@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dq00xji3jif2e"]
 
-[ext_resource type="Texture2D" uid="uid://h3vnmwb6deae" path="res://Tile Maps/Sprites/Grass-01.png" id="1_815fc"]
+[ext_resource type="Texture2D" uid="uid://ym4w7ahjyaeq" path="res://Tile Maps/Sprites/Grass-01.png" id="1_815fc"]
 [ext_resource type="Script" uid="uid://3s5x4o06sq4y" path="res://Tile Maps/LevelTileMap.gd" id="2_uskr2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uskr2"]

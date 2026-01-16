@@ -89,8 +89,9 @@ func _take_damage (hurt_box : HurtBox) -> void:
 		invulnerable = true
 		player_damaged.emit(hurt_box)
 	else :
+		# Player died - trigger lose screen
 		player_damaged.emit(hurt_box)
-		update_hp(99)
+		LevelManager.level_failed.emit()
 		print("Player is out of health!")
 	pass
 func update_hp (delta : int) -> void:

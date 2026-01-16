@@ -11,10 +11,11 @@ size = Vector2(27, 29)
 size = Vector2(24, 16)
 
 [node name="Plant" type="Node2D"]
+y_sort_enabled = true
+z_index = 2
 script = ExtResource("1_djs60")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-y_sort_enabled = true
 position = Vector2(0, -9)
 texture = ExtResource("2_0y2q1")
 hframes = 16
